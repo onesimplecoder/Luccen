@@ -30,7 +30,7 @@ public class StdAnalyzer {
     public static void stdAnalyzer(String str) throws IOException {
         Analyzer analyzer = new StandardAnalyzer();
         StringReader reader = new StringReader(str);
-        TokenStream stream = analyzer.tokenStream(str, str);
+        TokenStream stream = analyzer.tokenStream(str, reader);
         stream.reset();
         CharTermAttribute attribute = stream.getAttribute(CharTermAttribute.class);
         while(stream.incrementToken()){
